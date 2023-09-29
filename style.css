@@ -151,3 +151,28 @@ body{
 .day img{
     height: 35px;
 }
+
+@media (max-width : 1280px) {
+    .components{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .weather{
+        margin: auto;
+        width: 85%;
+    }
+    .info{
+        margin: auto;
+        margin-top: 80px;
+        width: 90%;
+    }
+    .search{
+        width: 95%;
+    }
+    .detail{
+        width: 95%;
+    }
+    .details{
+        width: 25%;
+    }
+}

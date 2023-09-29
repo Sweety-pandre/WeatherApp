@@ -33,6 +33,24 @@ function checkweather(city) {
             if(data.weather[0].main == "Clouds"){
                 weatherIcon.src = "img/clouds.png";
             }
+            if(data.weather[0].main == "Mist"){
+                weatherIcon.src = "img/mist.png";
+            }
+            if(data.weather[0].main == "Rain"){
+                weatherIcon.src = "img/rainStorm.png";
+            }
+            if(data.weather[0].main == "Drizzle"){
+                weatherIcon.src = "img/rainEmoji.jpg";
+            }
+            if(data.weather[0].main == "Clear"){
+                weatherIcon.src = "img/sun.png";
+            }
+            if(data.weather[0].main == "Thunderstorm"){
+                weatherIcon.src = "img/cute.png";
+            }
+            if(data.weather[0].main == "Haze"){
+                weatherIcon.src = "img/error-removebg-preview.png";
+            }
         } 
         
         else {

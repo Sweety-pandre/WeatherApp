@@ -1,6 +1,6 @@
 //flaticon  fontspace  pexels
 const apiKey = "1c841832de0ffab834b1e6e6dde55765";
-const apiURL = `http://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&q=`
+const apiURL = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&q=`
 
 
 

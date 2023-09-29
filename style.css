@@ -72,7 +72,7 @@ body{
 
 
 .weather{
-    margin-left: 50px;
+    margin-left: 10px;
     width: 40%;
     margin-top: 10px;
    
@@ -182,6 +182,7 @@ body{
     .components{
         flex-direction: column;
         justify-content: center;
+        width: 100%;
     }
     .weather{
         margin: auto;
@@ -200,5 +201,10 @@ body{
     }
     .details{
         width: 25%;
+    }
+    .carD{
+        margin: auto;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }

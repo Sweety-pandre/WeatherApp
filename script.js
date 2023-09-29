@@ -54,23 +54,23 @@ function checkweather(city) {
 
 
 
-function getWeatherForCurrentLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            const key = "AIzaSyBEKtIc93bWJHCMpeig6rE9oIwTTZOQxrk";
-            const url = `https://www.googleapis.com/geolocation/v1/?geolocatekey=${key}`
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
-            const currentLocationURL = `${url}&lat=${latitude}&lon=${longitude}`;
-            checkweather(currentLocationURL);
-        });
-    } else {
-        console.error("Geolocation is not supported by this browser.");
-    }
-}
+// function getWeatherForCurrentLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition((position) => {
+//             const key = "AIzaSyBEKtIc93bWJHCMpeig6rE9oIwTTZOQxrk";
+//             const url = `https://www.googleapis.com/geolocation/v1/?geolocatekey=${key}`
+//             const latitude = position.coords.latitude;
+//             const longitude = position.coords.longitude;
+//             const currentLocationURL = `${url}&lat=${latitude}&lon=${longitude}`;
+//             checkweather(currentLocationURL);
+//         });
+//     } else {
+//         console.error("Geolocation is not supported by this browser.");
+//     }
+// }
 
-// Initially load weather data for the user's current location
-getWeatherForCurrentLocation();
+// // Initially load weather data for the user's current location
+// getWeatherForCurrentLocation();
 
 
 

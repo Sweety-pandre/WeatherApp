@@ -1,7 +1,7 @@
 //flaticon  fontspace  pexels
 const apiKey = "1c841832de0ffab834b1e6e6dde55765";
 const apiURL = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&q=`;
-const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?appid=${apiKey}&cnt=3&q=`;
+const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?appid=${apiKey}&cnt=8&q=`;
 
 
 const searchBox = document.querySelector(".search input");
@@ -15,6 +15,7 @@ function checkweather(city) {
 
     const xhr = new XMLHttpRequest();
 
+
     xhr.onload = function () {
 
         if (xhr.status == 200) {
@@ -23,11 +24,12 @@ function checkweather(city) {
 
             console.log(data);
 
+            document.querySelector(".changeUnit").style.display = "inline";
             document.querySelector(".city").innerHTML = data.name + " | " + date;
             document.querySelector(".description").innerHTML = data.weather[0].main + " : " + data.weather[0].description;
             document.querySelector(".temp").innerHTML = Math.round(data.main.temp) - 273 + "°C";
             document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-            document.querySelector(".wind").innerHTML = data.wind.speed + "miles/hr";
+            document.querySelector(".wind").innerHTML = data.wind.speed + "ml/hr";
             document.querySelector(".pressure").innerHTML = data.main.pressure;
             document.querySelector(".temperature").innerHTML = Math.round(data.main.temp) - 273 + "°C";
 
@@ -73,20 +75,7 @@ function checkweather(city) {
 
 
 
-
-
-
-
-//on clicking search icon checkweather will be called with the input city value
-searchBtn.addEventListener("click", () => {
-    checkweather(searchBox.value);
-    foreCastweather(searchBox.value);
-});
-
-
-
-
-
+//function for forecasting
 function foreCastweather(city) {
 
     const xhr = new XMLHttpRequest();
@@ -108,7 +97,7 @@ function foreCastweather(city) {
             console.log(data);
 
 
-            document.querySelector(".fcDate ").innerHTML =formatDate(data.list[0].dt);
+            document.querySelector(".fcDate ").innerHTML =formatDate(data.list[3].dt);
             document.querySelector(".fcTemp ").innerHTML ="Temp : " + Math.round(data.list[0].main.temp) - 273 + "°C";
             document.querySelector(".fcWeather ").innerHTML ="Weather : " + data.list[0].weather[0].description ;
             document.querySelector(".fcHumidity ").innerHTML = "Humidity : " + data.list[0].main.humidity + "%"; 
@@ -151,4 +140,35 @@ function foreCastweather(city) {
 
     xhr.send();
 
+}
+
+//calling both functions
+searchBtn.addEventListener("click", () => {
+    checkweather(searchBox.value);
+    foreCastweather(searchBox.value);
+});
+
+
+
+let isCelsius = true; // Initial unit is Celsius
+
+function changeUnit() {
+    const tempElement = document.querySelector(".temp");
+    const currentTemp = parseInt(tempElement.textContent); // Get the current temperature as an integer
+
+    if (isCelsius) {
+        // Convert Celsius to Fahrenheit
+
+        const fahrenheitTemp = Math.round((currentTemp * 9/5) + 32);
+        tempElement.textContent = `${fahrenheitTemp}°F`;
+        document.querySelector(".changeUnit").innerHTML = "°C";
+    } else {
+        // Convert Fahrenheit to Celsius
+        const celsiusTemp = Math.round((currentTemp - 32) * 5/9);
+        tempElement.textContent = `${celsiusTemp}°C`;
+        document.querySelector(".changeUnit").innerHTML = "°F";
+    }
+
+    // Toggle the unit flag
+    isCelsius = !isCelsius;
 }

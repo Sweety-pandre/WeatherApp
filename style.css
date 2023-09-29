@@ -8,6 +8,8 @@ body{
      background-repeat: no-repeat;
     /* background: linear-gradient(180deg, black,black); */
 }
+
+/*container*/
 .carD{
     width: 90%;
     border-radius: 20px;
@@ -20,33 +22,29 @@ body{
     justify-self: center;
 }
 
-.components{
-    display: flex;
-    padding-bottom: 50px;
-    margin-top: 40px;
-}
 
+/*search bar, input and search button*/
 .search{
     margin: auto;
     width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: grey;
+    background-color: rgb(235, 232, 232);
     border-radius: 30px;
     
 }
 .search input{
     border: 0;
     outline: 0;
-    background: gray;
+    background: rgb(235, 232, 232);
     width: 100%;
     height: 40px;
     border-radius: 30px;
     margin-right: 16px;
     font-size: 15px;
     padding-left: 50px;
-    font-weight: bold;
+    font-weight: 500;
 }
 .search button{
     border: 0;
@@ -62,6 +60,17 @@ body{
     height: 100%;
     border-radius: 50%;
 }
+
+
+
+
+.components{
+    display: flex;
+    padding-bottom: 50px;
+    margin-top: 40px;
+}
+
+
 .weather{
     margin-left: 50px;
     width: 40%;
@@ -85,51 +94,46 @@ body{
 }
 .details{
     font-size: 12px;
-    margin: 0 8px;
+    margin: 0 3px;
     /* background: linear-gradient(180deg, rgb(234, 166, 210),rgb(109, 73, 106),rgb(98, 83, 96));  */
     background: radial-gradient(rgb(44, 2, 58), black); 
-     color: rgb(44, 2, 43); 
     color: rgb(167, 120, 165);
     border-radius: 6px;
     padding-top: 18px;
     justify-content: center;
     font-weight: light;
     cursor: pointer;
-    font-weight: lighter;
+    font-weight: 600;
+    
 }
 
 .detail{
-    margin-bottom: 0;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 4px;
     color: white;
     font-size: 14px;
-    
+    width: 60%;
 }
+
 .changeUnit{
-    background-color: rgb(162, 81, 162);
+    background-color: rgb(24, 2, 24);
     border: none;
-    color: black;
-    margin-bottom: 5px;
+    color: rgb(247, 242, 242);
+    margin-bottom: 4px;
     align-items: center;
-    border-radius: 9px;
-    padding: 1px 8px;
-
-}
-.icon{
-    height: 25px;
-}
-
-.cityNotFound{
-    margin-top: 35px;
-    font-size: 30px;
-    justify-content: left;
+    border-radius: 19px;
+    padding: 0px 8px;
+    width: 50px;
     display: none;
 }
-.cityNotFound img{
-    height: 150px;
+.icon{
+
+    height: 25px;
+    margin-bottom: 10px;
+    margin-top: 8px ;
 }
-.cityNotFound h1{
-    margin: 40px 0 60px 0;
-}
+
 
 .info{
     background: radial-gradient(rgb(44, 2, 58), black);
@@ -155,6 +159,25 @@ body{
     height: 35px;
 }
 
+
+
+/*if city entered is wrong*/
+.cityNotFound{
+    margin-top: 35px;
+    font-size: 30px;
+    justify-content: left;
+    display: none;
+}
+.cityNotFound img{
+    height: 150px;
+}
+.cityNotFound h1{
+    margin: 40px 0 60px 0;
+}
+
+
+
+/*css for phone*/
 @media (max-width : 1280px) {
     .components{
         flex-direction: column;
